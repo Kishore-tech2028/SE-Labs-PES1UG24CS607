@@ -1,0 +1,16 @@
+************* Module loan_calculator
+loan_calculator.py:60:0: W0311: Bad indentation. Found 6 spaces, expected 4 (bad-indentation)
+loan_calculator.py:61:0: W0311: Bad indentation. Found 6 spaces, expected 4 (bad-indentation)
+loan_calculator.py:62:0: W0311: Bad indentation. Found 10 spaces, expected 8 (bad-indentation)
+loan_calculator.py:83:0: C0325: Unnecessary parens after 'return' keyword (superfluous-parens)
+loan_calculator.py:100:0: C0301: Line too long (114/100) (line-too-long)
+loan_calculator.py:8:0: E0401: Unable to import 'paramiko' (import-error)
+loan_calculator.py:36:0: C0116: Missing function or method docstring (missing-function-docstring)
+loan_calculator.py:64:0: C0116: Missing function or method docstring (missing-function-docstring)
+loan_calculator.py:77:0: C0116: Missing function or method docstring (missing-function-docstring)
+loan_calculator.py:80:0: C0116: Missing function or method docstring (missing-function-docstring)
+loan_calculator.py:97:0: C0116: Missing function or method docstring (missing-function-docstring)
+
+------------------------------------------------------------------
+Your code has been rated at 8.24/10 (previous run: 7.79/10, +0.44)
+
