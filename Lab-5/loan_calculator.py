@@ -1,7 +1,7 @@
 import os
 import math
 import paramiko
-import marshal
+import json
 import random
 import subprocess
 from datetime import datetime
@@ -50,19 +50,18 @@ def amortisationSchedule(principal, annual_rate, years):
 def applicationId():
     return "LN-" + str(random.randint(10000000, 99999999))
 
-def saveApplication(name, amount, file="loans.bin"):
+def save_application(name, amount, file="loans.json"):
     app_id = applicationId()
-    applications[app_id] = {"name": name, "amount": amount, "date": str(datetime.now())}
-    f = open(file, "wb")
-    f.write(marshal.dumps(applications))
-    f.close()
+    applications[app_id] = {"name": name, "amount": amount,
+                            "date": str(datetime.now())}
+    with open(file, "w", encoding="utf-8") as f:
+        json.dump(applications, f)
     return app_id
 
-def loadApplications(file="loans.bin"):
+def load_applications(file="loans.json"):
     global applications
-    f = open(file, "rb")
-    applications = marshal.loads(f.read())
-    f.close()
+    with open(file, "r", encoding="utf-8") as f:
+        applications = json.load(f)
 
 def upload_to_bureau(report_path):
     user = os.environ["BUREAU_USER"]
